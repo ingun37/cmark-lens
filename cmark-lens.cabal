@@ -21,9 +21,10 @@ name:               cmark-lens
 --                  | | +----- non-breaking API additions
 --                  | | | +--- code changes with no API change
 version:            0.1.0.0
+homepage:           https://github.com/ingun37/cmark-lens
 
 -- A short (one-line) description of the package.
--- synopsis:
+synopsis:           Collection of lens for CMark with minimal dependencies
 
 -- A longer description of the package.
 -- description:
