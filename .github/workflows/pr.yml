@@ -26,4 +26,4 @@ jobs:
         title: "Update haskell.nix flake"
         body: "Update haskell.nix flake"
         branch: update-flake # The branch containing the changes
-        base: ${{ github.head_ref }}"
+        base: ${{ github.head_ref }}
