@@ -1,0 +1,28 @@
+name: Build & cache
+on:
+  pull_request:
+    paths:
+      - '**.cabal'
+permissions:
+  contents: write
+  pull-requests: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: cachix/install-nix-action@v31
+      with:
+        extra_nix_config: |
+          trusted-public-keys = hydra.iohk.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ= cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=
+          substituters = https://cache.iog.io/ https://cache.nixos.org/
+        nix_path: nixpkgs=channel:nixos-unstable
+    - run: |
+        nix run "github:input-output-hk/haskell.nix#hix" -- init
+    - name: Create Pull Request
+      uses: peter-evans/create-pull-request@v6
+      with:
+        commit-message: "Automated PR from feature-branch"
+        title: "Update haskell.nix flake"
+        body: "Update haskell.nix flake"
+        branch: update-flake # The branch containing the changes
