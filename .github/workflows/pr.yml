@@ -20,7 +20,7 @@ jobs:
     - run: |
         nix run "github:input-output-hk/haskell.nix#hix" -- init
     - name: Create Pull Request
-      uses: peter-evans/create-pull-request@v6
+      uses: peter-evans/create-pull-request@v7
       with:
         commit-message: "Automated PR from feature-branch"
         title: "Update haskell.nix flake"
