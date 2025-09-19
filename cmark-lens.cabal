@@ -68,7 +68,7 @@ library
     -- other-extensions:
 
     -- Other library packages from which modules are imported.
-    build-depends:    base ^>=4.21.0.0, cmark, lens
+    build-depends:    base ^>=4.21.0.0, cmark <= 0.6.1, text, profunctors
 
     -- Directories containing source files.
     hs-source-dirs:   src
@@ -101,4 +101,8 @@ test-suite cmark-lens-test
     -- Test dependencies.
     build-depends:
         base ^>=4.21.0.0,
-        cmark-lens
+        cmark-lens,
+        lens,
+        cmark,
+        text,
+        hspec
