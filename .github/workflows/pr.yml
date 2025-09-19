@@ -1,4 +1,4 @@
-name: Build & cache
+name: Generate flake
 on:
   pull_request:
     paths:
