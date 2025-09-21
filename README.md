@@ -1,6 +1,6 @@
 # CMark Lens
 
-Collection of Lens for [cmark](https://hackage.haskell.org/package/cmark-0.6.1)
+Collection of Lens for [cmark](https://hackage.haskell.org/package/cmark)
 
 This package is written in the style of [writing lenses without lens](https://github.com/ekmett/lens/wiki/How-can-I-write-lenses-without-depending-on-lens%3F) making it a lightweight dependency.
 
@@ -20,3 +20,5 @@ foo node =
       node'' = set (_nodesTraversal . _nodesTraversal . _nodeType . _TEXT) "" node
    in ()
 ```
+
+For the lenses for `cmark-gfm-lens` go https://github.com/ingun37/cmark-gfm-lens
