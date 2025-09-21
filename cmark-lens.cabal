@@ -69,7 +69,11 @@ library
     -- other-extensions:
 
     -- Other library packages from which modules are imported.
-    build-depends:    base ^>=4.21.0.0, cmark <= 0.6.1, text, profunctors
+    build-depends:
+        base ^>=4.21.0.0,
+        cmark >= 0.6.1 && < 0.7,
+        text,
+        profunctors
 
     -- Directories containing source files.
     hs-source-dirs:   src
