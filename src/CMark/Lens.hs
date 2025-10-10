@@ -1,11 +1,28 @@
 module CMark.Lens
   ( _posInfo,
     _nodeType,
-    _nodesTraversal,
+    _nodes,
     _nodesLens,
-    _HEADING,
+    _DOCUMENT,
+    _THEMATIC_BREAK,
     _PARAGRAPH,
+    _BLOCK_QUOTE,
+    _ITEM,
+    _SOFTBREAK,
+    _LINEBREAK,
+    _EMPH,
+    _STRONG,
+    _HTML_BLOCK,
     _TEXT,
+    _HTML_INLINE,
+    _CODE,
+    _HEADING,
+    _LIST,
+    _CUSTOM_BLOCK,
+    _CUSTOM_INLINE,
+    _CODE_BLOCK,
+    _LINK,
+    _IMAGE,
   )
 where
 
@@ -25,10 +42,12 @@ _nodeType inj (Node a nt b) =
    in set <$> inj nt
 {-# INLINE _nodeType #-}
 
-_nodesTraversal :: (Applicative f) => (Node -> f Node) -> Node -> f Node
-_nodesTraversal inj (Node a b nodes) = Node a b <$> traverse inj nodes
-{-# INLINE _nodesTraversal #-}
+-- | Traversal' for the child Nodes of a Node. For the Lens' use `_nodesLens`
+_nodes :: (Applicative f) => (Node -> f Node) -> Node -> f Node
+_nodes inj (Node a b nodes) = Node a b <$> traverse inj nodes
+{-# INLINE _nodes #-}
 
+-- | Lens' for the child Nodes of a Node. For the Traversal' use `_nodes`
 _nodesLens :: (Functor f) => ([Node] -> f [Node]) -> Node -> f Node
 _nodesLens inj (Node a b nodes) = Node a b <$> inj nodes
 {-# INLINE _nodesLens #-}
@@ -36,7 +55,6 @@ _nodesLens inj (Node a b nodes) = Node a b <$> inj nodes
 prism0 :: (Choice p, Applicative f) => NodeType -> p () (f ()) -> p NodeType (f NodeType)
 prism0 c = dimap to fro . right'
   where
-    -- to DOCUMENT = Right ()
     to x = if x == c then Right () else Left x
     fro (Left it) = pure it
     fro (Right fa) = c <$ fa
