@@ -1,6 +1,6 @@
 # CMark Lens
 
-(Incomplete) Collection of Lens for [cmark](https://hackage.haskell.org/package/cmark)
+Unofficial collection of Lens for [cmark](https://hackage.haskell.org/package/cmark).
 
 This package is written in the style of [writing lenses without lens](https://github.com/ekmett/lens/wiki/How-can-I-write-lenses-without-depending-on-lens%3F) making it a lightweight dependency.
 

@@ -27,10 +27,7 @@ homepage:           https://github.com/ingun37/cmark-lens
 synopsis:           Collection of lens for CMark with minimal dependencies
 
 -- A longer description of the package.
-description: |
-    Collection of lens for CMark with minimal dependencies.
-    This is an unofficial version.
-    It's missing some properties.
+description:        Unofficial collection of lens for CMark with minimal dependencies
 
 -- The license under which the package is released.
 license:            BSD-3-Clause
