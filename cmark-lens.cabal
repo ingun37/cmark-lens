@@ -27,7 +27,10 @@ homepage:           https://github.com/ingun37/cmark-lens
 synopsis:           Collection of lens for CMark with minimal dependencies
 
 -- A longer description of the package.
--- description:
+description: |
+    Collection of lens for CMark with minimal dependencies.
+    This is an unofficial version.
+    It's missing some properties.
 
 -- The license under which the package is released.
 license:            BSD-3-Clause
@@ -52,6 +55,15 @@ extra-doc-files:    CHANGELOG.md
 -- Extra source files to be distributed with the package, such as examples, or a tutorial module.
 -- extra-source-files:
 
+source-repository this
+    type:     git
+    location: https://github.com/ingun37/cmark-lens.git
+    tag:      df82fbf225927df30302ec06be0416da9ae4c541
+
+source-repository head
+    type:     git
+    location: https://github.com/ingun37/cmark-lens.git
+
 common warnings
     ghc-options: -Wall
 
@@ -71,9 +83,9 @@ library
     -- Other library packages from which modules are imported.
     build-depends:
         base ^>=4.21.0.0,
-        cmark >= 0.6.1 && < 0.7,
-        text,
-        profunctors
+        cmark ^>=0.6.1,
+        text ^>=2.1.2,
+        profunctors ^>=5.6.3
 
     -- Directories containing source files.
     hs-source-dirs:   src
