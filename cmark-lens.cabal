@@ -20,7 +20,7 @@ name:               cmark-lens
 -- PVP summary:     +-+------- breaking API changes
 --                  | | +----- non-breaking API additions
 --                  | | | +--- code changes with no API change
-version:            0.2.2
+version:            0.2.3
 homepage:           https://github.com/ingun37/cmark-lens
 
 -- A short (one-line) description of the package.
