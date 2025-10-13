@@ -1,4 +1,4 @@
-cabal-version:      3.12
+cabal-version:      3.8
 -- The cabal-version field refers to the version of the .cabal specification,
 -- and can be different from the cabal-install (the tool) version and the
 -- Cabal (the library) version you are using. As such, the Cabal (the library)
@@ -20,7 +20,7 @@ name:               cmark-lens
 -- PVP summary:     +-+------- breaking API changes
 --                  | | +----- non-breaking API additions
 --                  | | | +--- code changes with no API change
-version:            0.2.0.0
+version:            0.2.1
 homepage:           https://github.com/ingun37/cmark-lens
 
 -- A short (one-line) description of the package.
@@ -79,7 +79,7 @@ library
 
     -- Other library packages from which modules are imported.
     build-depends:
-        base ^>=4.21.0.0,
+        base <5,
         cmark ^>=0.6.1,
         text ^>=2.1.2,
         profunctors ^>=5.6.3
@@ -114,7 +114,7 @@ test-suite cmark-lens-test
 
     -- Test dependencies.
     build-depends:
-        base ^>=4.21.0.0,
+        base <5,
         cmark-lens,
         lens,
         cmark,
